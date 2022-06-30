@@ -339,3 +339,113 @@ print(' '.join(y))
 # 2022 vize sınavı çıkmış sorular ve çözümleri
 ##################################
 
+# soru-1
+from functools import reduce
+
+a=["python","programlama","dili","ile","fonksiyonel","programlama"]
+b= len(list(filter(lambda a:len(a)>3, a))) # a listesindeki elemanların uzunluğu 3'den büyük olanları alır
+c=reduce(lambda a,b:a*b, range(1,b+1))
+
+print(c)
+
+
+# soru-2
+
+from functools import reduce
+
+a="abcdefghijklmnopqrstuvwxyz"
+b = reduce(lambda a,b:a.upper()+b.lower(), list(a.strip(' ')))
+print(b)
+
+###
+# soru-2 incelme
+print(list(a.strip(' ')))
+
+# soru-3
+
+items = ["a","b","a","c","d","c","b","a"]
+# listesindeki her bir elemanın kaç defa geçtiği
+# ['a': 3, 'b': 2, 'c': 2, 'd': 1]
+# şeklinde sözlük yapısı oluşturan python teh satırlık kodu
+# fonksiyonel programlama kullanalar yazınız.
+
+cevap = {i:items.count(i) for i in items}
+print(cevap)
+
+
+# soru-4
+
+# geliştirilecek bir otomasyonda doğrudan NO-SQL bir veritabanı foreign_key
+# alanında kullanılmak üzere harf ve rakamlardan oluşan unique stringler üretilecektir.
+# aşağıdaki gibi x listesinde bunların olduğunu varsayarak, bu listenin sadece unique (tekil)
+#olanları alan python tek satırlık kodu yazınız
+
+x = ["a1","b1","a1","1a","abc123","1a2b","b1"]
+
+y=list(set(x))
+print(y)
+
+
+# soru-5
+x="Python" #stringini alıp
+# ['P', 'Py', 'Pyt', 'Pyth', 'Pytho', 'Python'] listesini üreten
+# tek satırlık kodu yazınız.
+
+y = [x[0:i+1] for i in range(0,len(x))]
+
+print(y)
+
+
+###################################
+# 2022 final sınavı soruları ve çözümleri
+##################################
+
+print("###################################")
+print("final sınavı çözümleri")
+print("###################################")
+
+#soru-1
+#öncelikle string cümleyi alıp split ile değerlerine ayırıyordu
+#daha sonra bu değerleri tek tek kontrol edip
+#uzunluğu 3ten küçük olanları direkt yazdırıyordu
+#büyük olanları da tersine çeviriyordu
+
+from functools import reduce
+
+x = map( lambda a : a [::-1] if len(a) > 3 else a,  "Why i do love Python?".split(" "))
+print(list(x))
+
+
+# soru-2
+
+print(reduce(lambda a,b:a**b, range(-1,6,2)))
+
+
+# soru-3
+
+urls = ['www.firat.edu.tr', 'www.kartoyunu.com', 'www.bahisvar.com', 'www.google.com', "www.python.org"]
+bans = 'kart bahis aaa'
+
+#bans değerindeki harfleri içermeyen urls listesini oluşturunuz
+
+c = filter(lambda a: not any([i in a for i in bans]), urls)
+print(list(c))
+
+a = list(filter(lambda a: a not in bans, urls))
+b = list(filter(lambda a: any([1 if ban in a else 0 for ban in bans.split(' ')]), urls))
+#print(a)
+
+#print(b)
+
+# soru-4
+satislar = [
+    {"tur": "su", "adet": 2},
+    {"tur": "domates", "adet": 3},
+    {"tur": "poşet", "adet": 1},
+    {"tur": "su", "adet": 4},
+]
+
+# "tur" değeri su olan ürünlerin adet toplamı kaçtır?
+toplam = sum([item["adet"] for item in satislar if item["tur"] == "su"])
+
+print(toplam)
