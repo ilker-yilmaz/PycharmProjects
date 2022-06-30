@@ -18,3 +18,4 @@ print(reduce(lambda a,b:a**b , range(-1,6,2)))
 
 
 #soru-5
+print(reduce(lambda a,b:a**b , range(-1,6,2)))
