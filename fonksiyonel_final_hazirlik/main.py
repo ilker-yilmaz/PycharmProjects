@@ -423,7 +423,7 @@ print(reduce(lambda a,b:a**b, range(-1,6,2)))
 
 # soru-3
 
-urls = ['www.firat.edu.tr', 'www.kartoyunu.com', 'www.bahisvar.com', 'www.google.com', "www.python.org"]
+urls = ['www.firat.edu.tr', 'www.kartoyunu.com', 'www.bahisvar.com', 'www.google.com', "www.aaapython.org"]
 bans = 'kart bahis aaa'
 
 #bans değerindeki harfleri içermeyen urls listesini oluşturunuz
@@ -449,3 +449,21 @@ satislar = [
 toplam = sum([item["adet"] for item in satislar if item["tur"] == "su"])
 
 print(toplam)
+
+######################################
+# bütünleme çözümleri
+######################################
+
+# "Neden Python Programlamayı Seviyorum?" how to convert to "Seviyorum? Programlamayı Python nedeN"
+
+soru1= (' '.join("Neden Python Programlamayı Seviyorum?".split(' ')[::-1]))
+
+print(soru1)
+
+# 1'den n'e kadar olan sayıların s değeri kadar artarak çarpımlarını bulunuz
+
+n=5
+s=2
+soru_2 = reduce(lambda a,b:a*b, range(1,n,s))
+print(soru_2)
+
