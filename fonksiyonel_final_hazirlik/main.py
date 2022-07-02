@@ -467,3 +467,20 @@ s=2
 soru_2 = reduce(lambda a,b:a*b, range(1,n,s))
 print(soru_2)
 
+
+##############################
+# bütünleme cevap anahtarı
+##############################
+
+# cevap 1
+print(' '.join(map(lambda a: a[::-1] if len(a) > 5 else a, "Neden Python Programlamayı Seviyorum"[::-1].split(" "))))
+
+
+# cevap 2
+items = ["a","b","a","c","d","c","b","a"]
+sozluk = {str(i):items.count(i) for i in items}
+
+print(sozluk)
+
+# cevap 4
+reduce(lambda a,b:a*b, range(1,n,s))
